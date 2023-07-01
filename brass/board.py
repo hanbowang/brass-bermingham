@@ -21,6 +21,13 @@ class LinkType(Enum):
     RAIL = 1
     CANAL = 2
 
+class BeerBonus(Enum):
+    DEVELOP = 1
+    INCOME = 2
+    VICTORY = 3
+    MONEY = 4
+
+
 class GameBoard:
     def __init__(self) -> None:
         pass
@@ -28,6 +35,12 @@ class GameBoard:
 class Space:
     def __init__(self, industries:list[Industry]) -> None:
         self.industries = industries
+
+class Merchant:
+    def __init__(self, industries:set[Industry], beer_bonus:BeerBonus) -> None:
+        self.industries = industries
+        self.beer_bonus = beer_bonus
+        self.beer = False
 
 
 class Line:
@@ -38,14 +51,36 @@ class Line:
 
 
 class Location:
-    def __init__(self, color:Color, name:str, spaces:list[Space]) -> None:
-        self.color = color
+    def __init__(self, name:str) -> None:
         self.name = name
+        self.lines = []
+
+    def add_line(self, line:Line):
+        self.lines.append(line)
+
+class RegularLocation(Location):
+    def __init__(self, name:str, spaces:list[Space]=[]) -> None:
+        super().__init__(name)
         self.spaces = spaces
 
 
-redditch = Location(
-    color=Color.PURPLE,
+class MarketLocation(Location):
+    def __init__(self, name:str, merchants:list[Merchant]=[]) -> None:
+        super().__init__(name)
+        self.merchants = merchants
+
+class FarmBrewryLocation(Location):
+    def __init__(self) -> None:
+        super().__init__(None)
+
+
+def connect(location_left:Location, location_right:Location, allowed_link_types: set[LinkType]):
+    line = Line(location_left, location_right, allowed_link_types)
+    location_left.add_line(line)
+    location_right.add_line(line)
+
+
+redditch = RegularLocation(
     name='redditch',
     spaces=[
         Space([Industry.MANUFACTURER, Industry.COAL]),
@@ -53,3 +88,14 @@ redditch = Location(
     ]
 )
 
+birmingham = RegularLocation(
+    name='birmingham',
+    spaces=[
+        Space([Industry.COTTON, Industry.MANUFACTURER]),
+        Space([Industry.MANUFACTURER]),
+        Space([Industry.IRON]),
+        Space([Industry.MANUFACTURER])
+    ]
+)
+
+connect(redditch, birmingham, {LinkType.RAIL})
