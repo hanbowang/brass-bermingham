@@ -1,21 +1,15 @@
 from __future__ import annotations
 from enum import Enum
 
+from brass.common import Industry
 
-class Color(Enum):
-    BLUE = 1
-    TEAL = 2
-    YELLOW = 3
-    BROWN = 4
-    PURPLE = 5
+# class Color(Enum):
+#     BLUE = 1
+#     TEAL = 2
+#     YELLOW = 3
+#     BROWN = 4
+#     PURPLE = 5
 
-class Industry(Enum):
-    COTTON = 1
-    MANUFACTURER = 2
-    POTTERY = 3
-    BREWRY = 4
-    COAL = 5
-    IRON = 6
 
 class LinkType(Enum):
     RAIL = 1
@@ -26,7 +20,6 @@ class BeerBonus(Enum):
     INCOME = 2
     VICTORY = 3
     MONEY = 4
-
 
 class GameBoard:
     def __init__(self) -> None:
@@ -42,7 +35,7 @@ class Merchant:
         self.industries = industries
         self.beer_bonus = beer_bonus
         self.beer = False
-
+        
 
 class Line:
     def __init__(self, connected_locations:list[Location], allowed_link_types: set[LinkType]) -> None:
