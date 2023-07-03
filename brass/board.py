@@ -35,6 +35,7 @@ class GameBoard:
 class Space:
     def __init__(self, industries:list[Industry]) -> None:
         self.industries = industries
+        self.tile = None
 
 class Merchant:
     def __init__(self, industries:set[Industry], beer_bonus:BeerBonus) -> None:
@@ -44,9 +45,8 @@ class Merchant:
 
 
 class Line:
-    def __init__(self, location_left:Location, location_right:Location, allowed_link_types: set[LinkType]) -> None:
-        self.location_left = location_left
-        self.location_right = location_right
+    def __init__(self, connected_locations:list[Location], allowed_link_types: set[LinkType]) -> None:
+        self.connected_locations = connected_locations
         self.allowed_link_types = allowed_link_types
 
 
@@ -69,15 +69,15 @@ class MarketLocation(Location):
         super().__init__(name)
         self.merchants = merchants
 
-class FarmBrewryLocation(Location):
+class FarmBrewryLocation(RegularLocation):
     def __init__(self) -> None:
-        super().__init__(None)
+        super().__init__(None, [Space(Industry.BREWRY)])
 
 
-def connect(location_left:Location, location_right:Location, allowed_link_types: set[LinkType]):
-    line = Line(location_left, location_right, allowed_link_types)
-    location_left.add_line(line)
-    location_right.add_line(line)
+def connect(connected_locations:list[Location], allowed_link_types: set[LinkType]):
+    line = Line(connected_locations, allowed_link_types)
+    for location in connected_locations:
+        location.add_line(line)
 
 
 redditch = RegularLocation(
@@ -98,4 +98,4 @@ birmingham = RegularLocation(
     ]
 )
 
-connect(redditch, birmingham, {LinkType.RAIL})
+connect([redditch, birmingham], {LinkType.RAIL})
