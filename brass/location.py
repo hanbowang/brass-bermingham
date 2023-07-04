@@ -48,8 +48,8 @@ class Space:
 
 class Location:
     def __init__(self, name:str) -> None:
-        self.name = name
-        self.lines = []
+        self.name: str = name
+        self.lines: list[Line] = []
 
     def add_line(self, line:Line):
         self.lines.append(line)
