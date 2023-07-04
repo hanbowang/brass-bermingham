@@ -6,7 +6,7 @@ from brass.merchant import Merchant
 from brass.tile import IndustryTile
 from brass.player import Player
 
-class LOCATION_NAME(Enum):
+class LocationName(Enum):
     # Regular
     WORCHESTER = 1
     KIDDERMINSTER = 2
@@ -79,9 +79,9 @@ class Line:
         self.built_player:Player = None
 
 
-def create_all_locations() -> dict[LOCATION_NAME, Location]:
+def create_all_locations() -> dict[LocationName, Location]:
     all_locations = {
-        LOCATION_NAME.REDDITCH: RegularLocation(
+        LocationName.REDDITCH: RegularLocation(
             name='redditch',
             spaces=[
                 Space([Industry.MANUFACTURER, Industry.COAL]),
@@ -89,7 +89,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.BIRMINGHAM: RegularLocation(
+        LocationName.BIRMINGHAM: RegularLocation(
             name='birmingham',
             spaces=[
                 Space([Industry.COTTON, Industry.MANUFACTURER]),
@@ -99,7 +99,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.COVENTRY: RegularLocation(
+        LocationName.COVENTRY: RegularLocation(
             name='coventry',
             spaces=[
                 Space([Industry.POTTERY],),
@@ -108,7 +108,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.NUNEATON: RegularLocation(
+        LocationName.NUNEATON: RegularLocation(
             name='nuneaton',
             spaces=[
                 Space([Industry.BREWERY, Industry.MANUFACTURER]),
@@ -116,7 +116,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.WORCHESTER: RegularLocation(
+        LocationName.WORCHESTER: RegularLocation(
             name='worchester',
             spaces=[
                 Space([Industry.COTTON]),
@@ -124,7 +124,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.KIDDERMINSTER: RegularLocation(
+        LocationName.KIDDERMINSTER: RegularLocation(
             name='kidderminster',
             spaces=[
                 Space([Industry.COTTON]),
@@ -132,7 +132,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.DUDLEY: RegularLocation(
+        LocationName.DUDLEY: RegularLocation(
             name='dudley',
             spaces=[
                 Space([Industry.COAL]),
@@ -140,7 +140,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.COALBROOKDALE: RegularLocation(
+        LocationName.COALBROOKDALE: RegularLocation(
             name='coalbrookdale',
             spaces=[
                 Space([Industry.IRON, Industry.BREWERY]),
@@ -149,7 +149,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
         
-        LOCATION_NAME.WOLVERHAMPTON: RegularLocation(
+        LocationName.WOLVERHAMPTON: RegularLocation(
             name='wolverhampton',
             spaces=[
                 Space([Industry.MANUFACTURER]),
@@ -157,7 +157,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.WALSALL: RegularLocation(
+        LocationName.WALSALL: RegularLocation(
             name='walsall',
             spaces=[
                 Space([Industry.MANUFACTURER, Industry.IRON]),
@@ -165,7 +165,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.TAMWORTH: RegularLocation(
+        LocationName.TAMWORTH: RegularLocation(
             name='tamworth',
             spaces=[
                 Space([Industry.COTTON, Industry.COAL]),
@@ -173,7 +173,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.CANNOCK: RegularLocation(
+        LocationName.CANNOCK: RegularLocation(
             name='cannock',
             spaces=[
                 Space([Industry.COAL]),
@@ -181,7 +181,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.STAFFORD: RegularLocation(
+        LocationName.STAFFORD: RegularLocation(
             name='stafford',
             spaces=[
                 Space([Industry.POTTERY]),
@@ -189,7 +189,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.BURTON_ON_TRENT: RegularLocation(
+        LocationName.BURTON_ON_TRENT: RegularLocation(
             name='burton-on-trent',
             spaces=[
                 Space([Industry.BREWERY]),
@@ -197,7 +197,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.DERBY: RegularLocation(
+        LocationName.DERBY: RegularLocation(
             name='derby',
             spaces=[
                 Space([Industry.MANUFACTURER, Industry.COTTON]),
@@ -206,7 +206,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.BELPER: RegularLocation(
+        LocationName.BELPER: RegularLocation(
             name='belper',
             spaces=[
                 Space([Industry.COTTON, Industry.MANUFACTURER]),
@@ -215,7 +215,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.UTTOXETER: RegularLocation(
+        LocationName.UTTOXETER: RegularLocation(
             name='uttoxeter',
             spaces=[
                 Space([Industry.MANUFACTURER, Industry.BREWERY]),
@@ -223,7 +223,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.STONE: RegularLocation(
+        LocationName.STONE: RegularLocation(
             name='stone',
             spaces=[
                 Space([Industry.COTTON, Industry.BREWERY]),
@@ -231,7 +231,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.STOKE_ON_TRENT: RegularLocation(
+        LocationName.STOKE_ON_TRENT: RegularLocation(
             name='stoke-on-trent',
             spaces=[
                 Space([Industry.POTTERY, Industry.IRON]),
@@ -240,7 +240,7 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.LEEK: RegularLocation(
+        LocationName.LEEK: RegularLocation(
             name='leek',
             spaces=[
                 Space([Industry.COTTON, Industry.MANUFACTURER]),
@@ -248,14 +248,14 @@ def create_all_locations() -> dict[LOCATION_NAME, Location]:
             ]
         ),
 
-        LOCATION_NAME.KIDDERMINSTER_WORCHESTER_FARM_BREWERY: FarmBrewryLocation(),
-        LOCATION_NAME.CANNOCK_FARM_BREWERY: FarmBrewryLocation(),
+        LocationName.KIDDERMINSTER_WORCHESTER_FARM_BREWERY: FarmBrewryLocation(),
+        LocationName.CANNOCK_FARM_BREWERY: FarmBrewryLocation(),
 
-        LOCATION_NAME.SHREWSBURY: MarketLocation(),
-        LOCATION_NAME.WARRINGTON: MarketLocation(),
-        LOCATION_NAME.NOTTINGHAM: MarketLocation(),
-        LOCATION_NAME.OXFORD: MarketLocation(),
-        LOCATION_NAME.GLOUCESTER: MarketLocation()
+        LocationName.SHREWSBURY: MarketLocation(),
+        LocationName.WARRINGTON: MarketLocation(),
+        LocationName.NOTTINGHAM: MarketLocation(),
+        LocationName.OXFORD: MarketLocation(),
+        LocationName.GLOUCESTER: MarketLocation()
     }
 
     _connect_all_locations(all_locations)
@@ -267,43 +267,43 @@ def _connect(connected_locations:list[Location], allowed_link_types: set[LinkTyp
         location.add_line(line)
 
 def _connect_all_locations(all_locations) -> None:
-    _connect([all_locations[LOCATION_NAME.REDDITCH], all_locations[LOCATION_NAME.BIRMINGHAM]], {LinkType.RAIL})
-    _connect([all_locations[LOCATION_NAME.BIRMINGHAM], all_locations[LOCATION_NAME.COVENTRY]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.BIRMINGHAM], all_locations[LOCATION_NAME.WALSALL]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.BIRMINGHAM], all_locations[LOCATION_NAME.NUNEATON]], {LinkType.RAIL})
-    _connect([all_locations[LOCATION_NAME.BIRMINGHAM], all_locations[LOCATION_NAME.TAMWORTH]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.BIRMINGHAM], all_locations[LOCATION_NAME.DUDLEY]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.BIRMINGHAM], all_locations[LOCATION_NAME.WORCHESTER]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.COVENTRY], all_locations[LOCATION_NAME.NUNEATON]], {LinkType.RAIL})
-    _connect([all_locations[LOCATION_NAME.NUNEATON], all_locations[LOCATION_NAME.TAMWORTH]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.WORCHESTER], all_locations[LOCATION_NAME.KIDDERMINSTER], all_locations[LOCATION_NAME.KIDDERMINSTER_WORCHESTER_FARM_BREWERY]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.KIDDERMINSTER], all_locations[LOCATION_NAME.DUDLEY]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.KIDDERMINSTER], all_locations[LOCATION_NAME.COALBROOKDALE]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.DUDLEY], all_locations[LOCATION_NAME.WOLVERHAMPTON]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.COALBROOKDALE], all_locations[LOCATION_NAME.WOLVERHAMPTON]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.WOLVERHAMPTON], all_locations[LOCATION_NAME.WALSALL]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.WOLVERHAMPTON], all_locations[LOCATION_NAME.CANNOCK]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.WALSALL], all_locations[LOCATION_NAME.TAMWORTH]], {LinkType.RAIL})
-    _connect([all_locations[LOCATION_NAME.WALSALL], all_locations[LOCATION_NAME.CANNOCK]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.WALSALL], all_locations[LOCATION_NAME.BURTON_ON_TRENT]], {LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.TAMWORTH], all_locations[LOCATION_NAME.BURTON_ON_TRENT]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.CANNOCK], all_locations[LOCATION_NAME.CANNOCK_FARM_BREWERY]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.CANNOCK], all_locations[LOCATION_NAME.STAFFORD]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.CANNOCK], all_locations[LOCATION_NAME.BURTON_ON_TRENT]], {LinkType.RAIL})
-    _connect([all_locations[LOCATION_NAME.BURTON_ON_TRENT], all_locations[LOCATION_NAME.DERBY]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.BURTON_ON_TRENT], all_locations[LOCATION_NAME.STONE]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.DERBY], all_locations[LOCATION_NAME.BELPER]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.DERBY], all_locations[LOCATION_NAME.UTTOXETER]], {LinkType.RAIL})
-    _connect([all_locations[LOCATION_NAME.BELPER], all_locations[LOCATION_NAME.LEEK]], {LinkType.RAIL})
-    _connect([all_locations[LOCATION_NAME.UTTOXETER], all_locations[LOCATION_NAME.STONE]], {LinkType.RAIL})
-    _connect([all_locations[LOCATION_NAME.STONE], all_locations[LOCATION_NAME.STOKE_ON_TRENT]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.STOKE_ON_TRENT], all_locations[LOCATION_NAME.LEEK]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.REDDITCH], all_locations[LocationName.BIRMINGHAM]], {LinkType.RAIL})
+    _connect([all_locations[LocationName.BIRMINGHAM], all_locations[LocationName.COVENTRY]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.BIRMINGHAM], all_locations[LocationName.WALSALL]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.BIRMINGHAM], all_locations[LocationName.NUNEATON]], {LinkType.RAIL})
+    _connect([all_locations[LocationName.BIRMINGHAM], all_locations[LocationName.TAMWORTH]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.BIRMINGHAM], all_locations[LocationName.DUDLEY]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.BIRMINGHAM], all_locations[LocationName.WORCHESTER]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.COVENTRY], all_locations[LocationName.NUNEATON]], {LinkType.RAIL})
+    _connect([all_locations[LocationName.NUNEATON], all_locations[LocationName.TAMWORTH]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.WORCHESTER], all_locations[LocationName.KIDDERMINSTER], all_locations[LocationName.KIDDERMINSTER_WORCHESTER_FARM_BREWERY]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.KIDDERMINSTER], all_locations[LocationName.DUDLEY]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.KIDDERMINSTER], all_locations[LocationName.COALBROOKDALE]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.DUDLEY], all_locations[LocationName.WOLVERHAMPTON]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.COALBROOKDALE], all_locations[LocationName.WOLVERHAMPTON]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.WOLVERHAMPTON], all_locations[LocationName.WALSALL]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.WOLVERHAMPTON], all_locations[LocationName.CANNOCK]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.WALSALL], all_locations[LocationName.TAMWORTH]], {LinkType.RAIL})
+    _connect([all_locations[LocationName.WALSALL], all_locations[LocationName.CANNOCK]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.WALSALL], all_locations[LocationName.BURTON_ON_TRENT]], {LinkType.CANAL})
+    _connect([all_locations[LocationName.TAMWORTH], all_locations[LocationName.BURTON_ON_TRENT]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.CANNOCK], all_locations[LocationName.CANNOCK_FARM_BREWERY]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.CANNOCK], all_locations[LocationName.STAFFORD]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.CANNOCK], all_locations[LocationName.BURTON_ON_TRENT]], {LinkType.RAIL})
+    _connect([all_locations[LocationName.BURTON_ON_TRENT], all_locations[LocationName.DERBY]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.BURTON_ON_TRENT], all_locations[LocationName.STONE]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.DERBY], all_locations[LocationName.BELPER]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.DERBY], all_locations[LocationName.UTTOXETER]], {LinkType.RAIL})
+    _connect([all_locations[LocationName.BELPER], all_locations[LocationName.LEEK]], {LinkType.RAIL})
+    _connect([all_locations[LocationName.UTTOXETER], all_locations[LocationName.STONE]], {LinkType.RAIL})
+    _connect([all_locations[LocationName.STONE], all_locations[LocationName.STOKE_ON_TRENT]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.STOKE_ON_TRENT], all_locations[LocationName.LEEK]], {LinkType.RAIL, LinkType.CANAL})
 
     # Markets
-    _connect([all_locations[LOCATION_NAME.GLOUCESTER], all_locations[LOCATION_NAME.WORCHESTER]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.GLOUCESTER], all_locations[LOCATION_NAME.REDDITCH]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.OXFORD], all_locations[LOCATION_NAME.REDDITCH]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.OXFORD], all_locations[LOCATION_NAME.BIRMINGHAM]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.SHREWSBURY], all_locations[LOCATION_NAME.COALBROOKDALE]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.WARRINGTON], all_locations[LOCATION_NAME.STOKE_ON_TRENT]], {LinkType.RAIL, LinkType.CANAL})
-    _connect([all_locations[LOCATION_NAME.NOTTINGHAM], all_locations[LOCATION_NAME.DERBY]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.GLOUCESTER], all_locations[LocationName.WORCHESTER]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.GLOUCESTER], all_locations[LocationName.REDDITCH]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.OXFORD], all_locations[LocationName.REDDITCH]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.OXFORD], all_locations[LocationName.BIRMINGHAM]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.SHREWSBURY], all_locations[LocationName.COALBROOKDALE]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.WARRINGTON], all_locations[LocationName.STOKE_ON_TRENT]], {LinkType.RAIL, LinkType.CANAL})
+    _connect([all_locations[LocationName.NOTTINGHAM], all_locations[LocationName.DERBY]], {LinkType.RAIL, LinkType.CANAL})
