@@ -43,6 +43,13 @@ class LinkType(Enum):
     RAIL = 1
     CANAL = 2
 
+
+class BeerBonus(Enum):
+    DEVELOP = 1 # Remove 1 of the lowest level tiles of any industry from your Player Mat (for no iron cost).  
+    INCOME = 2  # Advance your Income Marker 2 spaces along the Progress Track.
+    VICTORY = 3 # Advance your VP Marker along the Progress Track by the number of spaces indicated.
+    MONEY = 4   # Receive £5 from the Bank.
+
 class Space:
     def __init__(self, industries:list[Industry]) -> None:
         self.industries = industries
@@ -63,7 +70,7 @@ class RegularLocation(Location):
         self.spaces = spaces
 
 class MarketLocation(Location):
-    def __init__(self, name:str) -> None:
+    def __init__(self, name:str, beer_bonus:BeerBonus, bonus_amount:int=0) -> None:
         super().__init__(name)
         self.merchants = None
 
@@ -251,11 +258,11 @@ def create_all_locations() -> dict[LocationName, Location]:
         LocationName.KIDDERMINSTER_WORCHESTER_FARM_BREWERY: FarmBrewryLocation(),
         LocationName.CANNOCK_FARM_BREWERY: FarmBrewryLocation(),
 
-        LocationName.SHREWSBURY: MarketLocation(name='shrewsbury'),
-        LocationName.WARRINGTON: MarketLocation(name='warrington'),
-        LocationName.NOTTINGHAM: MarketLocation(name='nottingham'),
-        LocationName.OXFORD: MarketLocation(name='oxford'),
-        LocationName.GLOUCESTER: MarketLocation(name='gloucester'),
+        LocationName.SHREWSBURY: MarketLocation(name='shrewsbury', beer_bonus=BeerBonus.VICTORY, bonus_amount=4),
+        LocationName.WARRINGTON: MarketLocation(name='warrington', beer_bonus=BeerBonus.MONEY),
+        LocationName.NOTTINGHAM: MarketLocation(name='nottingham', beer_bonus=BeerBonus.VICTORY, bonus_amount=3),
+        LocationName.OXFORD: MarketLocation(name='oxford', beer_bonus=BeerBonus.INCOME),
+        LocationName.GLOUCESTER: MarketLocation(name='gloucester', beer_bonus=BeerBonus.DEVELOP),
     }
 
     _connect_all_locations(all_locations)
