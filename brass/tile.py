@@ -12,7 +12,19 @@ class TileState(Enum):
     REMOVED = 4
 
 class Tile:
-    def __init__(self, industry:Industry, level:int, victory_point:int, income:int, link_multiplier:int, cost:dict, beer_consumption:int=0, max_resource:dict=None, era:Era=None, can_be_developed:bool=True) -> None:
+    def __init__(
+            self,
+            industry:Industry,
+            level:int,
+            victory_point:int,
+            income:int,
+            link_multiplier:int,
+            cost:dict,
+            beer_consumption:int=0,
+            max_resource:dict=None,
+            era:Era=None,
+            can_be_developed:bool=True
+    ) -> None:
         self.industry = industry
         self.level = level
         self.victory_point = victory_point
@@ -190,7 +202,7 @@ def create_brewery_tiles() -> list[Tile]:
         },
         era=Era.RAIL
     )
-
+    
     brewery_level_3 = Tile(
         industry=Industry.BREWERY,
         level=3,
@@ -230,6 +242,148 @@ def create_brewery_tiles() -> list[Tile]:
         },
         era=Era.CANAL
     )
-    
+
     tiles = [brewery_level_4, brewery_level_3, brewery_level_2, brewery_level_1]
+    return tiles
+
+def create_manufacturer_tiles() -> list[Tile]:
+    manufacture_level_8 = Tile(
+        industry=Industry.MANUFACTURER,
+        level=8,
+        victory_point=11,
+        income=1,
+        link_multiplier=1,
+        cost={Resource.IRON: 2, Resource.MONEY: 20},
+        beer_consumption=1
+    )
+
+    manufacture_level_7 = Tile(
+        industry=Industry.MANUFACTURER,
+        level=7,
+        victory_point=9,
+        income=4,
+        link_multiplier=0,
+        cost={Resource.COAL: 1, Resource.IRON: 1, Resource.MONEY: 16},
+        beer_consumption=0
+    )
+
+    manufacture_level_6 = Tile(
+        industry=Industry.MANUFACTURER,
+        level=6,
+        victory_point=7,
+        income=6,
+        link_multiplier=1,
+        cost={Resource.MONEY: 20},
+        beer_consumption=1
+    )
+
+    manufacture_level_5 = Tile(
+        industry=Industry.MANUFACTURER,
+        level=5,
+        victory_point=8,
+        income=2,
+        link_multiplier=2,
+        cost={Resource.COAL: 1, Resource.MONEY: 16},
+        beer_consumption=2
+    )
+
+    manufacture_level_4 = Tile(
+        industry=Industry.MANUFACTURER,
+        level=4,
+        victory_point=3,
+        income=6,
+        link_multiplier=1,
+        cost={Resource.IRON: 1, Resource.MONEY: 8},
+        beer_consumption=1
+    )
+
+    manufacture_level_3 = Tile(
+        industry=Industry.MANUFACTURER,
+        level=3,
+        victory_point=4,
+        income=4,
+        link_multiplier=0,
+        cost={Resource.COAL: 2, Resource.MONEY: 12},
+        beer_consumption=0
+    )
+
+    manufacture_level_2 = Tile(
+        industry=Industry.MANUFACTURER,
+        level=2,
+        victory_point=5,
+        income=1,
+        link_multiplier=1,
+        cost={Resource.IRON: 1, Resource.MONEY: 10},
+        beer_consumption=1
+    )
+
+    manufacture_level_1 = Tile(
+        industry=Industry.MANUFACTURER,
+        level=1,
+        victory_point=3,
+        income=5,
+        link_multiplier=2,
+        cost={Resource.COAL: 1, Resource.MONEY: 8},
+        beer_consumption=1,
+        era=Era.CANAL
+    )
+
+    tiles = [manufacture_level_8, manufacture_level_7, manufacture_level_6, manufacture_level_5, manufacture_level_4, manufacture_level_3, manufacture_level_2, manufacture_level_1]
+    return tiles
+
+def create_pottery_tiles() -> list[Tile]:
+    pottery_level_5 = Tile(
+        industry=Industry.POTTERY,
+        level=5,
+        victory_point=20,
+        income=5,
+        link_multiplier=1,
+        cost={Resource.COAL: 2, Resource.MONEY: 24},
+        beer_consumption=2,
+        era=Era.RAIL
+    )
+
+    pottery_level_4 = Tile(
+        industry=Industry.POTTERY,
+        level=4,
+        victory_point=1,
+        income=1,
+        link_multiplier=1,
+        cost={Resource.COAL: 1},
+        beer_consumption=1
+    )
+
+    pottery_level_3 = Tile(
+        industry=Industry.POTTERY,
+        level=3,
+        victory_point=11,
+        income=5,
+        link_multiplier=1,
+        cost={Resource.COAL: 2, Resource.MONEY: 22},
+        can_be_developed=False,
+        beer_consumption=2
+    )
+
+    pottery_level_2 = Tile(
+        industry=Industry.POTTERY,
+        level=2,
+        victory_point=1,
+        income=1,
+        link_multiplier=1,
+        cost={Resource.COAL: 1},
+        beer_consumption=1
+    )
+
+    pottery_level_1 = Tile(
+        industry=Industry.POTTERY,
+        level=1,
+        victory_point=10,
+        income=5,
+        link_multiplier=1,
+        cost={Resource.IRON: 1, Resource.MONEY: 17},
+        beer_consumption=1,
+        can_be_developed=False
+    )
+
+    tiles = [pottery_level_5, pottery_level_4, pottery_level_3, pottery_level_2, pottery_level_1]
     return tiles
