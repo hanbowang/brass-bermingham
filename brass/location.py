@@ -63,9 +63,9 @@ class RegularLocation(Location):
         self.spaces = spaces
 
 class MarketLocation(Location):
-    def __init__(self, name:str, merchants:list[Merchant]) -> None:
+    def __init__(self, name:str) -> None:
         super().__init__(name)
-        self.merchants = merchants
+        self.merchants = None
 
 class FarmBrewryLocation(RegularLocation):
     def __init__(self) -> None:
@@ -251,11 +251,11 @@ def create_all_locations() -> dict[LocationName, Location]:
         LocationName.KIDDERMINSTER_WORCHESTER_FARM_BREWERY: FarmBrewryLocation(),
         LocationName.CANNOCK_FARM_BREWERY: FarmBrewryLocation(),
 
-        LocationName.SHREWSBURY: MarketLocation(),
-        LocationName.WARRINGTON: MarketLocation(),
-        LocationName.NOTTINGHAM: MarketLocation(),
-        LocationName.OXFORD: MarketLocation(),
-        LocationName.GLOUCESTER: MarketLocation()
+        LocationName.SHREWSBURY: MarketLocation(name='shrewsbury'),
+        LocationName.WARRINGTON: MarketLocation(name='warrington'),
+        LocationName.NOTTINGHAM: MarketLocation(name='nottingham'),
+        LocationName.OXFORD: MarketLocation(name='oxford'),
+        LocationName.GLOUCESTER: MarketLocation(name='gloucester'),
     }
 
     _connect_all_locations(all_locations)
