@@ -90,7 +90,7 @@ def create_coal_tiles() -> list[Tile]:
         income=6,
         link_multiplier=1,
         cost={Resource.IRON: 1, Resource.MONEY: 8},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 4,
             Era.RAIL: 4
         }
@@ -102,7 +102,7 @@ def create_coal_tiles() -> list[Tile]:
         income=7,
         link_multiplier=1,
         cost={Resource.MONEY: 7},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 3,
             Era.RAIL: 3
         }
@@ -114,7 +114,7 @@ def create_coal_tiles() -> list[Tile]:
         income=4,
         link_multiplier=2,
         cost={Resource.MONEY: 5},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 2,
             Era.RAIL: 2
         },
@@ -131,7 +131,7 @@ def create_iron_tiles() -> list[Tile]:
         income=1,
         link_multiplier=1,
         cost={Resource.COAL: 1, Resource.MONEY: 12},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 6,
             Era.RAIL: 6
         }
@@ -143,7 +143,7 @@ def create_iron_tiles() -> list[Tile]:
         income=2,
         link_multiplier=1,
         cost={Resource.COAL: 1, Resource.MONEY: 9},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 5,
             Era.RAIL: 5
         }
@@ -155,7 +155,7 @@ def create_iron_tiles() -> list[Tile]:
         income=3,
         link_multiplier=1,
         cost={Resource.COAL: 1, Resource.MONEY: 7},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 4,
             Era.RAIL: 4
         }
@@ -167,7 +167,7 @@ def create_iron_tiles() -> list[Tile]:
         income=3,
         link_multiplier=1,
         cost={Resource.COAL: 1, Resource.MONEY: 5},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 4,
             Era.RAIL: 4
         },
@@ -184,7 +184,7 @@ def create_brewery_tiles() -> list[Tile]:
         income=5,
         link_multiplier=2,
         cost={Resource.IRON: 1, Resource.MONEY: 9},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 1,
             Era.RAIL: 2
         },
@@ -198,7 +198,7 @@ def create_brewery_tiles() -> list[Tile]:
         income=5,
         link_multiplier=2,
         cost={Resource.IRON: 1, Resource.MONEY: 9},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 1,
             Era.RAIL: 2
         }
@@ -211,7 +211,7 @@ def create_brewery_tiles() -> list[Tile]:
         income=5,
         link_multiplier=2,
         cost={Resource.IRON: 1, Resource.MONEY: 7},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 1,
             Era.RAIL: 2
         }
@@ -224,7 +224,7 @@ def create_brewery_tiles() -> list[Tile]:
         income=4,
         link_multiplier=2,
         cost={Resource.IRON: 1, Resource.MONEY: 5},
-        remaining_resource={
+        max_resource={
             Era.CANAL: 1,
             Era.RAIL: 1
         },

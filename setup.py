@@ -1,9 +1,5 @@
 from setuptools import setup, find_packages
 
-
-with open('LICENSE') as f:
-    license = f.read()
-
 setup(
     name='brass',
     version='0.1.0',

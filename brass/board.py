@@ -52,19 +52,19 @@ class Location:
         self.lines.append(line)
 
 class RegularLocation(Location):
-    def __init__(self, name:str, spaces:list[Space]=[]) -> None:
+    def __init__(self, name:str, spaces:list[Space]) -> None:
         super().__init__(name)
         self.spaces = spaces
 
 
 class MarketLocation(Location):
-    def __init__(self, name:str, merchants:list[Merchant]=[]) -> None:
+    def __init__(self, name:str, merchants:list[Merchant]) -> None:
         super().__init__(name)
         self.merchants = merchants
 
 class FarmBrewryLocation(RegularLocation):
     def __init__(self) -> None:
-        super().__init__(None, [Space(Industry.BREWRY)])
+        super().__init__(None, [Space(Industry.BREWERY)])
 
 
 def connect(connected_locations:list[Location], allowed_link_types: set[LinkType]):

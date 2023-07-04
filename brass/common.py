@@ -5,7 +5,7 @@ class Industry(Enum):
     COTTON = 1
     MANUFACTURER = 2
     POTTERY = 3
-    BREWRY = 4
+    BREWERY = 4
     COAL = 5
     IRON = 6
 
