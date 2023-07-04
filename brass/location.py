@@ -3,6 +3,8 @@ from enum import Enum
 
 from brass.common import Industry
 from brass.merchant import Merchant
+from brass.tile import IndustryTile
+from brass.player import Player
 
 class LOCATION_NAME(Enum):
     # Regular
@@ -44,7 +46,7 @@ class LinkType(Enum):
 class Space:
     def __init__(self, industries:list[Industry]) -> None:
         self.industries = industries
-        self.tile = None
+        self.tile:IndustryTile = None
 
 class Location:
     def __init__(self, name:str) -> None:
@@ -74,6 +76,7 @@ class Line:
     def __init__(self, connected_locations:list[Location], allowed_link_types: set[LinkType]) -> None:
         self.connected_locations = connected_locations
         self.allowed_link_types = allowed_link_types
+        self.built_player:Player = None
 
 
 def create_all_locations() -> dict[LOCATION_NAME, Location]:
