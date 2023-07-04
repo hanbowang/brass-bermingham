@@ -4,6 +4,7 @@ from enum import Enum
 from brass.common import Industry
 from brass.common import Resource
 from brass.common import Era
+from brass.player import Player
 
 class TileState(Enum):
     UNBUILT = 1
@@ -14,6 +15,7 @@ class TileState(Enum):
 class Tile:
     def __init__(
             self,
+            player: Player,
             industry:Industry,
             level:int,
             victory_point:int,
@@ -25,6 +27,7 @@ class Tile:
             era:Era=None,
             can_be_developed:bool=True
     ) -> None:
+        self.player = player
         self.industry = industry
         self.level = level
         self.victory_point = victory_point
@@ -37,8 +40,9 @@ class Tile:
         self.can_be_developed = can_be_developed
         self.state = TileState.UNBUILT
 
-def create_cotton_tiles() -> list[Tile]:
+def create_cotton_tiles(player: Player) -> list[Tile]:
     cotton_level_4 = Tile(
+        player=player,
         industry=Industry.COTTON,
         level=4,
         victory_point=12,
@@ -49,6 +53,7 @@ def create_cotton_tiles() -> list[Tile]:
     )
 
     cotton_level_3 = Tile(
+        player=player,
         industry=Industry.COTTON,
         level=3,
         victory_point=9,
@@ -59,6 +64,7 @@ def create_cotton_tiles() -> list[Tile]:
     )
 
     cotton_level_2 = Tile(
+        player=player,
         industry=Industry.COTTON,
         level=2,
         victory_point=5,
@@ -69,6 +75,7 @@ def create_cotton_tiles() -> list[Tile]:
     )
 
     cotton_level_1 = Tile(
+        player=player,
         industry=Industry.COTTON,
         level=1,
         victory_point=5,
@@ -82,8 +89,9 @@ def create_cotton_tiles() -> list[Tile]:
 
     return tiles
 
-def create_coal_tiles() -> list[Tile]:
+def create_coal_tiles(player:Player) -> list[Tile]:
     coal_level_4 = Tile(
+        player=player,
         industry=Industry.COAL,
         level=4,
         victory_point=4,
@@ -96,6 +104,7 @@ def create_coal_tiles() -> list[Tile]:
         }
     )
     coal_level_3 = Tile(
+        player=player,
         industry=Industry.COAL,
         level=3,
         victory_point=3,
@@ -108,6 +117,7 @@ def create_coal_tiles() -> list[Tile]:
         }
     )
     coal_level_2 = Tile(
+        player=player,
         industry=Industry.COAL,
         level=2,
         victory_point=2,
@@ -120,6 +130,7 @@ def create_coal_tiles() -> list[Tile]:
         }
     )
     coal_level_1 = Tile(
+        player=player,
         industry=Industry.COAL,
         level=1,
         victory_point=1,
@@ -135,8 +146,9 @@ def create_coal_tiles() -> list[Tile]:
     tiles = [coal_level_4, coal_level_3, coal_level_2, coal_level_1]
     return tiles
 
-def create_iron_tiles() -> list[Tile]:
+def create_iron_tiles(player:Player) -> list[Tile]:
     iron_level_4 = Tile(
+        player=player,
         industry=Industry.IRON,
         level=4,
         victory_point=9,
@@ -149,6 +161,7 @@ def create_iron_tiles() -> list[Tile]:
         }
     )
     iron_level_3 = Tile(
+        player=player,
         industry=Industry.IRON,
         level=3,
         victory_point=7,
@@ -161,6 +174,7 @@ def create_iron_tiles() -> list[Tile]:
         }
     )
     iron_level_2 = Tile(
+        player=player,
         industry=Industry.IRON,
         level=2,
         victory_point=5,
@@ -173,6 +187,7 @@ def create_iron_tiles() -> list[Tile]:
         }
     )
     iron_level_1 = Tile(
+        player=player,
         industry=Industry.IRON,
         level=1,
         victory_point=3,
@@ -188,8 +203,9 @@ def create_iron_tiles() -> list[Tile]:
     tiles = [iron_level_4, iron_level_3, iron_level_2, iron_level_1]
     return tiles
 
-def create_brewery_tiles() -> list[Tile]:
+def create_brewery_tiles(player:Player) -> list[Tile]:
     brewery_level_4 = Tile(
+        player=player,
         industry=Industry.BREWERY,
         level=4,
         victory_point=10,
@@ -204,6 +220,7 @@ def create_brewery_tiles() -> list[Tile]:
     )
 
     brewery_level_3 = Tile(
+        player=player,
         industry=Industry.BREWERY,
         level=3,
         victory_point=7,
@@ -217,6 +234,7 @@ def create_brewery_tiles() -> list[Tile]:
     )
 
     brewery_level_2 = Tile(
+        player=player,
         industry=Industry.BREWERY,
         level=2,
         victory_point=5,
@@ -230,6 +248,7 @@ def create_brewery_tiles() -> list[Tile]:
     )
 
     brewery_level_1 = Tile(
+        player=player,
         industry=Industry.BREWERY,
         level=1,
         victory_point=4,
@@ -246,8 +265,9 @@ def create_brewery_tiles() -> list[Tile]:
     tiles = [brewery_level_4, brewery_level_3, brewery_level_2, brewery_level_1]
     return tiles
 
-def create_manufacturer_tiles() -> list[Tile]:
+def create_manufacturer_tiles(player:Player) -> list[Tile]:
     manufacture_level_8 = Tile(
+        player=player,
         industry=Industry.MANUFACTURER,
         level=8,
         victory_point=11,
@@ -258,6 +278,7 @@ def create_manufacturer_tiles() -> list[Tile]:
     )
 
     manufacture_level_7 = Tile(
+        player=player,
         industry=Industry.MANUFACTURER,
         level=7,
         victory_point=9,
@@ -268,6 +289,7 @@ def create_manufacturer_tiles() -> list[Tile]:
     )
 
     manufacture_level_6 = Tile(
+        player=player,
         industry=Industry.MANUFACTURER,
         level=6,
         victory_point=7,
@@ -278,6 +300,7 @@ def create_manufacturer_tiles() -> list[Tile]:
     )
 
     manufacture_level_5 = Tile(
+        player=player,
         industry=Industry.MANUFACTURER,
         level=5,
         victory_point=8,
@@ -288,6 +311,7 @@ def create_manufacturer_tiles() -> list[Tile]:
     )
 
     manufacture_level_4 = Tile(
+        player=player,
         industry=Industry.MANUFACTURER,
         level=4,
         victory_point=3,
@@ -298,6 +322,7 @@ def create_manufacturer_tiles() -> list[Tile]:
     )
 
     manufacture_level_3 = Tile(
+        player=player,
         industry=Industry.MANUFACTURER,
         level=3,
         victory_point=4,
@@ -308,6 +333,7 @@ def create_manufacturer_tiles() -> list[Tile]:
     )
 
     manufacture_level_2 = Tile(
+        player=player,
         industry=Industry.MANUFACTURER,
         level=2,
         victory_point=5,
@@ -318,6 +344,7 @@ def create_manufacturer_tiles() -> list[Tile]:
     )
 
     manufacture_level_1 = Tile(
+        player=player,
         industry=Industry.MANUFACTURER,
         level=1,
         victory_point=3,
@@ -331,8 +358,9 @@ def create_manufacturer_tiles() -> list[Tile]:
     tiles = [manufacture_level_8, manufacture_level_7, manufacture_level_6, manufacture_level_5, manufacture_level_4, manufacture_level_3, manufacture_level_2, manufacture_level_1]
     return tiles
 
-def create_pottery_tiles() -> list[Tile]:
+def create_pottery_tiles(player:Player) -> list[Tile]:
     pottery_level_5 = Tile(
+        player=player,
         industry=Industry.POTTERY,
         level=5,
         victory_point=20,
@@ -344,6 +372,7 @@ def create_pottery_tiles() -> list[Tile]:
     )
 
     pottery_level_4 = Tile(
+        player=player,
         industry=Industry.POTTERY,
         level=4,
         victory_point=1,
@@ -354,6 +383,7 @@ def create_pottery_tiles() -> list[Tile]:
     )
 
     pottery_level_3 = Tile(
+        player=player,
         industry=Industry.POTTERY,
         level=3,
         victory_point=11,
@@ -365,6 +395,7 @@ def create_pottery_tiles() -> list[Tile]:
     )
 
     pottery_level_2 = Tile(
+        player=player,
         industry=Industry.POTTERY,
         level=2,
         victory_point=1,
@@ -375,6 +406,7 @@ def create_pottery_tiles() -> list[Tile]:
     )
 
     pottery_level_1 = Tile(
+        player=player,
         industry=Industry.POTTERY,
         level=1,
         victory_point=10,
@@ -388,14 +420,14 @@ def create_pottery_tiles() -> list[Tile]:
     tiles = [pottery_level_5, pottery_level_4, pottery_level_3, pottery_level_2, pottery_level_1]
     return tiles
 
-def create_all_tiles() -> dict:
+def create_all_tiles(player:Player) -> dict:
     all_tiles = {
-        Industry.BREWERY: create_brewery_tiles(),
-        Industry.MANUFACTURER: create_manufacturer_tiles(),
-        Industry.POTTERY: create_pottery_tiles(),
-        Industry.COTTON: create_cotton_tiles(),
-        Industry.IRON: create_iron_tiles(),
-        Industry.COAL: create_coal_tiles()
+        Industry.BREWERY: create_brewery_tiles(player),
+        Industry.MANUFACTURER: create_manufacturer_tiles(player),
+        Industry.POTTERY: create_pottery_tiles(player),
+        Industry.COTTON: create_cotton_tiles(player),
+        Industry.IRON: create_iron_tiles(player),
+        Industry.COAL: create_coal_tiles(player)
     }
 
     return all_tiles
