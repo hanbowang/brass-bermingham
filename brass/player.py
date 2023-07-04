@@ -38,4 +38,4 @@ class Player:
         if self._vp + amount < 0:
             self._vp = 0
         else:
-            self._vp += amount
+            self._vp += amount 
