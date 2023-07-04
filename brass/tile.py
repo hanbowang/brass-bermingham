@@ -202,7 +202,7 @@ def create_brewery_tiles() -> list[Tile]:
         },
         era=Era.RAIL
     )
-    
+
     brewery_level_3 = Tile(
         industry=Industry.BREWERY,
         level=3,
@@ -387,3 +387,15 @@ def create_pottery_tiles() -> list[Tile]:
 
     tiles = [pottery_level_5, pottery_level_4, pottery_level_3, pottery_level_2, pottery_level_1]
     return tiles
+
+def create_all_tiles() -> dict:
+    all_tiles = {
+        Industry.BREWERY: create_brewery_tiles(),
+        Industry.MANUFACTURER: create_manufacturer_tiles(),
+        Industry.POTTERY: create_pottery_tiles(),
+        Industry.COTTON: create_cotton_tiles(),
+        Industry.IRON: create_iron_tiles(),
+        Industry.COAL: create_coal_tiles()
+    }
+
+    return all_tiles
